@@ -1,8 +1,13 @@
 import java.util.function.Function;
 
 public class PricePlan implements Function<Rental, PricedRental> {
-  private final Tariff tariff = new Tariff();
-  private final LoyaltyPlan loyaltyPlan = new LoyaltyPlan();
+  private final Tariff tariff;
+  private final LoyaltyPlan loyaltyPlan;
+
+  public PricePlan(Tariff tariff, LoyaltyPlan loyaltyPlan) {
+    this.tariff = tariff;
+    this.loyaltyPlan = loyaltyPlan;
+  }
 
   @Override
   public PricedRental apply(Rental r) {

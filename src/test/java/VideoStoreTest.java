@@ -9,7 +9,7 @@ public class VideoStoreTest extends TestCase
 	}
 
 	protected void setUp ()  {
-		customer = new Customer ("Fred");
+		customer = new Customer ("Fred", new PricePlan(new Tariff(), new LoyaltyPlan()));
 	}
 
 	public void testSingleNewReleaseStatement () {
